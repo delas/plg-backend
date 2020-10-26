@@ -33,12 +33,12 @@
 		<dependency>
 			<groupId>plg</groupId>
 			<artifactId>libPlg</artifactId>
-			<version>[0.0.3,)</version>
+			<version>0.0.5</version>
 		</dependency>
 		<dependency>
 			<groupId>plg</groupId>
 			<artifactId>libPlgStream</artifactId>
-			<version>[0.0.1-SNAPSHOT,)</version>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		
 		<dependency>
