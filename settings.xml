@@ -18,9 +18,14 @@
 					</snapshots>
 				</repository>
 				<repository>
-					<id>github</id>
+					<id>github-plg</id>
 					<name>plg</name>
 					<url>https://maven.pkg.github.com/delas/plg</url>
+				</repository>
+				<repository>
+					<id>github-mqtt</id>
+					<name>mqttxes</name>
+					<url>https://maven.pkg.github.com/pmcep/mqtt-xes</url>
 				</repository>
 			</repositories>
 		</profile>
@@ -32,7 +37,12 @@
 	
 	<servers>
 		<server>
-			<id>github</id>
+			<id>github-plg</id>
+			<username>${env.MAVEN_REPO_USER}</username>
+			<password>${env.MAVEN_REPO_PASSWORD}</password>
+		</server>
+		<server>
+			<id>github-mqtt</id>
 			<username>${env.MAVEN_REPO_USER}</username>
 			<password>${env.MAVEN_REPO_PASSWORD}</password>
 		</server>
