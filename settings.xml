@@ -29,4 +29,12 @@
 	<activeProfiles>
 		<activeProfile>github</activeProfile>
 	</activeProfiles>
+	
+	<servers>
+		<server>
+			<id>github</id>
+			<username>${env.MAVEN_REPO_USER}</username>
+			<password>${env.MAVEN_REPO_PASSWORD}</password>
+		</server>
+	</servers>
 </settings>
