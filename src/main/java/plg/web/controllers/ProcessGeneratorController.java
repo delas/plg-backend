@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,7 @@ import plg.web.utils.ProcessUtils;
 
 @RestController
 @RequestMapping("/api/v2/process/")
+@CrossOrigin
 public class ProcessGeneratorController {
 
 	@GetMapping("/randomize")

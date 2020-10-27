@@ -6,6 +6,7 @@ import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +23,7 @@ import plg.web.model.Process4Web;
 
 @RestController
 @RequestMapping("/api/v2/streamer/")
+@CrossOrigin
 public class StreamController {
 
 	private Set<String> streaming = new HashSet<String>();
