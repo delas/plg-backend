@@ -1,0 +1,69 @@
+swagger: "2.0"
+info:
+  description: "This is a sample PLG Web server."
+  version: "0.0.1"
+  title: "PLG Web"
+  contact:
+    email: "andbur@dtu.dk"
+host: "plg-backend.herokuapp.com"
+basePath: "/api/v2/"
+schemes:
+- "https"
+paths:
+  /system/ping:
+    get:
+      tags:
+      - "system"
+      summary: "Ping the system"
+      description: "Checks if the system is online"
+      produces:
+      - "text/plain"
+      parameters: []
+      responses:
+        "200":
+          description: "The system is up and running"
+  /process/randomize:
+    get:
+      tags:
+      - "processes"
+      summary: "Generate a random process"
+      description: "Generate a random process specification using the default parameters."
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: "The process has been correctly generated"
+          schema:
+            $ref: "#/definitions/Process4Web"
+  /proces/plg2bpmn:
+    post:
+      tags:
+      - "processes"
+      summary: "Converts a process to BPMN"
+      description: ""
+      produces:
+      - "application/xml"
+      parameters:
+      - in: "body"
+        name: "plg"
+        description: "The process specification"
+        required: true
+        schema:
+          $ref: "#/definitions/Process4Web"
+      responses:
+        "200":
+          description: "The process has been correctly generated"
+
+definitions:
+  Process4Web:
+    type: "object"
+    properties:
+      id:
+        type: "string"
+      name:
+        type: "string"
+        description: "A short name for the process"
+      serialization:
+        type: "string"
+        description: "A string serialization of the process (can the XML generated from PLG)."
