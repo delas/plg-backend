@@ -7,8 +7,8 @@ import java.nio.file.Files;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import plg.generator.process.ProcessGenerator;
@@ -41,22 +41,22 @@ public class ProcessGeneratorController {
 	}
 	
 	@PostMapping("/plg2bpmn")
-	public String plg2bpmn(@RequestParam Process4Web process) throws IOException {
+	public String plg2bpmn(@RequestBody Process4Web process) throws IOException {
 		return exporter(process.getPlgProcess(), new BPMNExporter());
 	}
 	
 	@PostMapping("/plg2tpn")
-	public String plg2tpn(@RequestParam Process4Web process) throws IOException {
+	public String plg2tpn(@RequestBody Process4Web process) throws IOException {
 		return exporter(process.getPlgProcess(), new TPNExporter());
 	}
 	
 	@PostMapping("/plg2pnml")
-	public String plg2pnml(@RequestParam Process4Web process) throws IOException {
+	public String plg2pnml(@RequestBody Process4Web process) throws IOException {
 		return exporter(process.getPlgProcess(), new PNMLExporter());
 	}
 	
 	@PostMapping("/plg2dot")
-	public String plg2graphviz(@RequestParam Process4Web process) throws IOException {
+	public String plg2graphviz(@RequestBody Process4Web process) throws IOException {
 		return exporter(process.getPlgProcess(), new GraphvizBPMNExporter());
 	}
 	
