@@ -12,6 +12,7 @@ public class Process4Web {
 	private String id;
 	private String name;
 	private String serialization;
+	private String serializationType;
 	
 	public Process4Web() { }
 	
@@ -19,6 +20,7 @@ public class Process4Web {
 		this.id = id;
 		this.serialization = serialization;
 		this.name = id.substring(id.length() - 3);
+		this.serializationType = "plg";
 	}
 
 	public String getId() {
@@ -36,5 +38,9 @@ public class Process4Web {
 	@JsonIgnore
 	public Process getPlgProcess() throws IOException {
 		return ProcessUtils.plg2process(serialization);
+	}
+
+	public String getSerializationType() {
+		return serializationType;
 	}
 }

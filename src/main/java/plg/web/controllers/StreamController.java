@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -28,15 +29,15 @@ public class StreamController {
 
 	private Set<String> streaming = new HashSet<String>();
 	
-	@GetMapping("/{processId}")
-	public @ResponseBody String streaming(@PathVariable String processId) {
-		return streaming.contains(processId)? "true" : "false";
+	@GetMapping("/status/{processName}")
+	public @ResponseBody String streaming(@PathVariable String processName) {
+		return streaming.contains(processName)? "true" : "false";
 	}
 	
-	@PostMapping("/processes/stream/{processName}")
-	public @ResponseBody String stream(@RequestParam("plg") Process4Web process, @RequestParam("broker") String broker, @RequestParam("topic") String topic, @PathVariable String processName) {
+	@PostMapping("/start/{processName}")
+	public @ResponseBody String stream(@RequestBody Process4Web process, @RequestParam("broker") String broker, @RequestParam("topic") String topic, @PathVariable String processName) {
 		try {
-			if (streaming.contains(process.getId())) {
+			if (streaming.contains(processName)) {
 				return "false";
 			}
 			
@@ -52,7 +53,7 @@ public class StreamController {
 			
 			Streamer s = new Streamer(sc, processName, p, new SimulationConfiguration());
 			s.startStream();
-			streaming.add(p.getId());
+			streaming.add(processName);
 			
 			new Timer().schedule(new TimerTask() {
 				@Override
