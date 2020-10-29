@@ -30,6 +30,11 @@
 			<name></name>
 			<url>https://dl.bintray.com/delas/org.deckfour/</url>
 		</repository>
+		<repository>
+			<id>pmcep</id>
+			<name></name>
+			<url>https://dl.bintray.com/delas/pmcep/</url>
+		</repository>
 	</repositories>
 
 	<dependencies>
