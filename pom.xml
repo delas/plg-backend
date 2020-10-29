@@ -25,6 +25,11 @@
 			<name></name>
 			<url>https://dl.bintray.com/delas/plg/</url>
 		</repository>
+		<repository>
+			<id>org.deckfour</id>
+			<name></name>
+			<url>https://dl.bintray.com/delas/org.deckfour/</url>
+		</repository>
 	</repositories>
 
 	<dependencies>
