@@ -7,6 +7,7 @@ import java.nio.file.Files;
 
 import plg.io.exporter.PLGExporter;
 import plg.io.importer.PLGImporter;
+import plg.io.importer.PLGImporterNoPython;
 import plg.model.Process;
 
 public class ProcessUtils {
@@ -14,7 +15,7 @@ public class ProcessUtils {
 	public static Process plg2process(String process) throws IOException {
 		File fPlg = File.createTempFile("model", "plg");
 		Files.write(fPlg.toPath(), process.getBytes());
-		PLGImporter i = new PLGImporter();
+		PLGImporter i = new PLGImporterNoPython();
 		Process p = i.importModel(fPlg.getAbsolutePath());
 		fPlg.delete();
 		return p;
