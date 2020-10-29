@@ -20,7 +20,6 @@ import plg.io.exporter.PNMLExporter;
 import plg.io.exporter.TPNExporter;
 import plg.model.Process;
 import plg.web.model.Process4Web;
-import plg.web.utils.ProcessUtils;
 
 @RestController
 @RequestMapping("/api/v2/process/")
@@ -28,16 +27,10 @@ import plg.web.utils.ProcessUtils;
 public class ProcessGeneratorController {
 
 	@GetMapping("/randomize")
-	public Process4Web generate() {
+	public Process4Web generate() throws IOException {
 		Process p = new Process("");
 		ProcessGenerator.randomizeProcess(p, RandomizationConfiguration.BASIC_VALUES);
-		String model = "";
-		try {
-			model = ProcessUtils.process2plg(p);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return new Process4Web(p.getId(), model);
+		return new Process4Web(p.getId(), p);
 	}
 	
 	@PostMapping("/plg2bpmn")
