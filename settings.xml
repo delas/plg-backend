@@ -1,85 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<settings xsi:schemaLocation='http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd'
-          xmlns='http://maven.apache.org/SETTINGS/1.0.0' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
-    
-    <profiles>
-        <profile>
-            <repositories>
-                <repository>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                    <id>bintray-delas-ProcessMining</id>
-                    <name>bintray</name>
-                    <url>https://dl.bintray.com/delas/ProcessMining</url>
-                </repository>
-            </repositories>
-            <pluginRepositories>
-                <pluginRepository>
-                    <snapshots>
-                        <enabled>false</enabled>
-                    </snapshots>
-                    <id>bintray-delas-ProcessMining</id>
-                    <name>bintray-plugins</name>
-                    <url>https://dl.bintray.com/delas/ProcessMining</url>
-                </pluginRepository>
-            </pluginRepositories>
-            <id>bintray</id>
-        </profile>
-    </profiles>
-    <activeProfiles>
-        <activeProfile>bintray</activeProfile>
-    </activeProfiles>
-</settings>
+<settings
+	xsi:schemaLocation='http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd'
+	xmlns='http://maven.apache.org/SETTINGS/1.0.0'
+	xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
 
-
-<!-- <?xml version="1.0" encoding="UTF-8"?>
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
-	
- 	<profiles>
+	<profiles>
 		<profile>
-			<id>github</id>
 			<repositories>
 				<repository>
-					<id>central</id>
-					<url>https://repo1.maven.org/maven2</url>
-					<releases>
-						<enabled>true</enabled>
-					</releases>
 					<snapshots>
-						<enabled>true</enabled>
+						<enabled>false</enabled>
 					</snapshots>
-				</repository>
-				<repository>
-					<id>github-plg</id>
-					<name>plg</name>
-					<url>https://maven.pkg.github.com/delas/plg</url>
-				</repository>
-				<repository>
-					<id>github-mqtt</id>
-					<name>mqttxes</name>
-					<url>https://maven.pkg.github.com/pmcep/mqtt-xes</url>
+					<id>bintray-delas-plg</id>
+					<name>bintray</name>
+					<url>https://dl.bintray.com/delas/plg</url>
 				</repository>
 			</repositories>
+			<pluginRepositories>
+				<pluginRepository>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+					<id>bintray-delas-plg</id>
+					<name>bintray-plugins</name>
+					<url>https://dl.bintray.com/delas/plg</url>
+				</pluginRepository>
+			</pluginRepositories>
+			<id>bintray</id>
 		</profile>
 	</profiles>
-	
 	<activeProfiles>
-		<activeProfile>github</activeProfile>
+		<activeProfile>bintray</activeProfile>
 	</activeProfiles>
-	
-	<servers>
-		<server>
-			<id>github-plg</id>
-			<username>${env.MAVEN_REPO_USER}</username>
-			<password>${env.MAVEN_REPO_PASSWORD}</password>
-		</server>
-		<server>
-			<id>github-mqtt</id>
-			<username>${env.MAVEN_REPO_USER}</username>
-			<password>${env.MAVEN_REPO_PASSWORD}</password>
-		</server>
-	</servers>
-</settings> -->
+</settings>

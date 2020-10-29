@@ -21,9 +21,9 @@
 	
 	<repositories>
 		<repository>
-			<id>PLG Libraries</id>
+			<id>plg</id>
 			<name></name>
-			<url>https://dl.bintray.com/delas/ProcessMining/</url>
+			<url>https://dl.bintray.com/delas/plg/</url>
 		</repository>
 	</repositories>
 
@@ -70,35 +70,4 @@
 			</plugin>
 		</plugins>
 	</build>
-
-<!-- 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<goals>
-							<goal>repackage</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		
-			<plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<configuration>
-					<archive>
-						<manifest>
-							<mainClass>plg.web.WebPlgApplication</mainClass>
-						</manifest>
-					</archive>
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build> -->
-
 </project>
