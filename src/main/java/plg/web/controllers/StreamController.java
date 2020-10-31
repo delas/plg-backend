@@ -29,9 +29,9 @@ public class StreamController {
 
 	private Set<String> streaming = new HashSet<String>();
 	
-	@GetMapping("/status/{processName}")
-	public @ResponseBody String streaming(@PathVariable String processName) {
-		return streaming.contains(processName)? "true" : "false";
+	@GetMapping("/status/{processId}")
+	public @ResponseBody String streaming(@PathVariable String processId) {
+		return streaming.contains(processId)? "true" : "false";
 	}
 	
 	@PostMapping("/start/{processName}")
@@ -53,7 +53,7 @@ public class StreamController {
 			
 			Streamer s = new Streamer(sc, processName, p, new SimulationConfiguration());
 			s.startStream();
-			streaming.add(processName);
+			streaming.add(p.getId());
 			
 			new Timer().schedule(new TimerTask() {
 				@Override
