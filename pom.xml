@@ -21,19 +21,8 @@
 	
 	<repositories>
 		<repository>
-			<id>plg</id>
-			<name></name>
-			<url>https://dl.bintray.com/delas/plg/</url>
-		</repository>
-		<repository>
-			<id>org.deckfour</id>
-			<name></name>
-			<url>https://dl.bintray.com/delas/org.deckfour/</url>
-		</repository>
-		<repository>
-			<id>pmcep</id>
-			<name></name>
-			<url>https://dl.bintray.com/delas/pmcep/</url>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
 		</repository>
 	</repositories>
 
@@ -43,12 +32,12 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>plg</groupId>
+			<groupId>com.github.delas</groupId>
 			<artifactId>libPlg</artifactId>
-			<version>0.0.8</version>
+			<version>0.0.10</version>
 		</dependency>
 		<dependency>
-			<groupId>plg</groupId>
+			<groupId>com.github.delas</groupId>
 			<artifactId>libPlgStream</artifactId>
 			<version>0.0.2</version>
 		</dependency>
